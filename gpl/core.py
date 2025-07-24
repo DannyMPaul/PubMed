@@ -169,16 +169,11 @@ class PubMedSearcher:
         # Combine with OR operators
         company_filter = "(" + " OR ".join(company_affiliation_parts) + ")"
         
-        # Exclude academic institutions
-        academic_exclusions = [
-            '"university"[ad]', '"college"[ad]', '"institute"[ad]', '"hospital"[ad]',
-            '"medical center"[ad]', '"department"[ad]', '"school"[ad]'
-        ]
+        # No longer excluding academic affiliations - allow mixed company/academic papers
+        # Focus only on including papers with company affiliations
         
-        academic_filter = "NOT (" + " OR ".join(academic_exclusions) + ")"
-        
-        # Combine original query with company filter
-        enhanced_query = f"({query}) AND {company_filter} {academic_filter}"
+        # Combine original query with company filter only
+        enhanced_query = f"({query}) AND {company_filter}"
         
         return enhanced_query
     
