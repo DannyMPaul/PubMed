@@ -1,0 +1,51 @@
+[tool.poetry]
+name = "gpl"
+version = "0.1.0"
+description = "A CLI tool to search PubMed for pharmaceutical/biotech company research papers"
+authors = ["Your Name <your.email@example.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/yourusername/gpl"
+repository = "https://github.com/yourusername/gpl"
+keywords = ["pubmed", "research", "pharmaceutical", "biotech", "papers"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+
+[tool.poetry.dependencies]
+python = "^3.8.1"
+requests = "^2.31.0"
+click = "^8.1.7"
+tabulate = "^0.9.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+black = "^23.0.0"
+flake8 = "^6.0.0"
+mypy = "^1.5.0"
+types-requests = "^2.31.0"
+types-tabulate = "^0.9.0"
+
+[tool.poetry.scripts]
+gpl = "gpl.cli:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
