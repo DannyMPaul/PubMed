@@ -109,14 +109,14 @@ def save_papers_csv(papers: List[PubMedPaper], filename: str) -> None:
         sys.exit(1)
 
 
-@click.command()
+@click.command(context_settings={"help_option_names": ["-h", "--help"]})
 @click.argument('query', required=False)
 @click.option('--file', '-f', 'output_file', help='Save results to CSV file')
 @click.option('--debug', '-d', is_flag=True, help='Enable debug logging')
 @click.option('--no-prefilter', is_flag=True, help='Disable pre-filtering at search level (slower but more comprehensive)')
-@click.option('--help', '-h', is_flag=True, help='Show this help message')
 
-def main(query: Optional[str], output_file: Optional[str], debug: bool, no_prefilter: bool, help: bool) -> None:
+
+def main(query: Optional[str], output_file: Optional[str], debug: bool, no_prefilter: bool) -> None:
     """
     GPL - Get Pharma Literature
     
@@ -132,7 +132,7 @@ def main(query: Optional[str], output_file: Optional[str], debug: bool, no_prefi
         gpl "cancer therapy" --no-prefilter  # Disable search-level filtering
         gpl --help
     """
-    if help or not query:
+    if not query:
         ctx = click.get_current_context()
         click.echo(ctx.get_help())
         return

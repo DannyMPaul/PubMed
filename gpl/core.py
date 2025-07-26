@@ -151,8 +151,8 @@ class PubMedSearcher:
         # Generic company indicators
         company_terms = [
             "pharmaceutical", "pharmaceuticals", "pharma", "biotech", "biotechnology",
-            "therapeutics", "biopharmaceutical", "inc[ad]", "ltd[ad]", "corp[ad]",
-            "corporation[ad]", "company[ad]", "laboratories[ad]", "lab[ad]"
+            "therapeutics", "biopharmaceutical", "inc", "ltd", "corp",
+            "corporation", "company", "laboratories", "lab"
         ]
         
         # Build affiliation search terms using PubMed's [ad] field tag (author affiliation)
