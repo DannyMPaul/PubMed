@@ -223,9 +223,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Uses NCBI's PubMed E-utilities API
 - Built with assistance from Claude AI for initial structure and implementation
 - Inspired by the need for industry-focused biomedical literature searches
-
-## Contact
-
-Your Name - your.email@example.com
-
-Project Link: [https://github.com/yourusername/gpl](https://github.com/yourusername/gpl)
